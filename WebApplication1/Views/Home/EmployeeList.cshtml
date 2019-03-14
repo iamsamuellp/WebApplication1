@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RZOsound.Models.Employee>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.empfirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emplastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empstreetAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empcity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empzipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empareaCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empphoneNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.empfirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emplastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empstreetAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empcity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empzipCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empareaCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empphoneNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.employeeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.employeeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.employeeID })
+        </td>
+    </tr>
+}
+
+</table>
